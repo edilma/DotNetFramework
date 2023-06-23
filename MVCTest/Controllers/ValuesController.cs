@@ -7,29 +7,27 @@ using System.Web.Http;
 
 namespace MVCTest.Controllers
 {
+    [RoutePrefix("api/values")]
     public class ValuesController : ApiController
     {
-        //Create an Endpoint GetStuff
+        //Get api/values/GetStuff
         [HttpGet]
-        [Route("api/values/GetStuff")]
+        [Route("GetStuff")]
         public string GetStuff()
         {
             return "Hello World";
         }
 
-
-
-        // GET api/values
-        //create a endpoint route to get all values
+        // GET api/values/GetAllValues
         [HttpGet]
-        [Route("api/values/GetAllValues")]
+        [Route("GetAllValues")]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
         
-        [HttpGet]
         // GET api/values/5
+        [HttpGet]
         public string Get(int id)
         {
             return "value";
